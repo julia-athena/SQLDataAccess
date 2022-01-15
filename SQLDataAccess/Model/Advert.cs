@@ -8,5 +8,7 @@ namespace SQLDataAccess
 {
     public class Advert
     {
+        public int Id;
+        public string Title;
     }
 }
