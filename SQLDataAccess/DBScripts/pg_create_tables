@@ -1,0 +1,39 @@
+CREATE TABLE authors
+(
+	id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
+	first_name varchar(100) NOT NULL,
+	last_name varchar(100) NOT NULL,
+	email varchar(200) NOT NULL
+);
+
+CREATE TABLE adverts
+(
+    id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    title varchar(300),
+    author_id bigint,
+    FOREIGN KEY (author_id)
+        REFERENCES authors (id) 
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+CREATE TABLE category_titles
+(
+	id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	title varchar(200) NOT NULL
+);
+
+CREATE TABLE adverts_categories
+(
+    id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    advert_id bigint NOT NULL,
+    category_id bigint NOT NULL,
+    FOREIGN KEY (advert_id)
+        REFERENCES adverts (id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    FOREIGN KEY (category_id)
+        REFERENCES category_titles (id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);

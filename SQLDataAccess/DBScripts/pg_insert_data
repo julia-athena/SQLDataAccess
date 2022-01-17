@@ -1,0 +1,44 @@
+INSERT INTO authors(
+	id, first_name, last_name, email)
+OVERRIDING SYSTEM VALUE 
+	VALUES
+		(1,'Quinlan','Reese','phasellus.elit@protonmail.ca'),
+		(2,'Heralt','from Rivia','plotva@icloud.ca'),
+		(3,'Eagan','Reyes','pretium.aliquet@icloud.net'),
+		(4,'Katelyn','Benjamin','ac@protonmail.org'),
+		(5,'Branden','Waller','risus.quisque@google.ca');
+
+INSERT INTO category_titles(
+	id, title)
+OVERRIDING SYSTEM VALUE 
+	VALUES 
+		(1, 'Вещи'),
+		(2, 'Недвижимость'),
+		(3, 'Животные'),
+		(4, 'Хобби и отдых'),
+		(5, 'Услуги'),
+		(6, 'Охрана и безопасность');
+
+INSERT INTO adverts(
+	id, title, author_id)
+OVERRIDING SYSTEM VALUE 
+	VALUES 
+		(1, 'Гараж, 20 м', 5),
+		(2, 'Корм для попугая, премиум', 3),
+		(3, 'Сабля самурая', 4),
+		(4, 'Сега', 1),
+		(5, 'Избавление от чудовищ (утопцы, гули, упыри). Быстро и дорого', 2);
+
+INSERT INTO adverts_categories(
+	id, advert_id, category_id)
+OVERRIDING SYSTEM VALUE 
+	VALUES 
+		(1, 1, 2),		
+		(2, 2, 3),	
+		(3, 3, 1),		
+		(4, 4, 4),		
+		(5, 5, 5),
+		(6, 5, 6);
+
+
+		
