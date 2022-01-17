@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SQLDataAccess
 {
-    public class AdvertCategory
+    public class Category
     {
         public int Id;
-        public string Name;
+        public string Title;
     }
 }

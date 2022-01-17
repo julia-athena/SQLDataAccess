@@ -1,7 +1,7 @@
 ﻿using System;
-using Dapper;
 using System.Data;
-using Microsoft.Data.SqlClient;
+using Npgsql;
+
 
 namespace SQLDataAccess
 {
@@ -11,7 +11,8 @@ namespace SQLDataAccess
 
         public static IDbConnection Connection()
         {
-            return new SqlConnection(new ConnectionStringForApp(app).Value());
+            var connectionStr = new ConnectionStringForApp(app).Value();
+            return new NpgsqlConnection(connectionStr);
         }
     }
 }

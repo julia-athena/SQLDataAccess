@@ -10,5 +10,6 @@ namespace SQLDataAccess
     {
         public int Id;
         public string Title;
+        public int AuthorId;
     }
 }

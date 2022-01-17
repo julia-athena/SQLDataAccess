@@ -8,11 +8,11 @@ namespace SQLDataAccess.Repository.Dapper
 {
     public class DapperAuthorRepository : IAuthorRepository
     {
-        private static readonly string CreateQuery = "insert into Authors (Id, FirstName, FamilyName, Email) VALUES(@Id, @FirstName, @FamilyName, @Email)";
-        private static readonly string DeleteQuery = "delete from Authors where Id = @id";
-        private static readonly string UpdateQuery = "update Authors SET FirstName = @FirstName, FamilyName = @FamilyName, Email = Email WHERE Id = @Id";
-        private static readonly string GetQuery = "select * from Authors WHERE Id = @id";
-        private static readonly string GetAllQuery = "select * from Authors";
+        private static readonly string CreateQuery = "insert into authors (id, first_name, family_name, email) VALUES(@Id, @FirstName, @FamilyName, @Email)";
+        private static readonly string DeleteQuery = "delete from authors where id = @id";
+        private static readonly string UpdateQuery = "update authors SET first_name = @FirstName, family_name = @FamilyName, email = @Email WHERE id = @Id";
+        private static readonly string GetQuery = "select * from authors WHERE id = @id";
+        private static readonly string GetAllQuery = "select id Id, first_name as FirstName, last_name as FamilyName, email as Email from authors";
 
         public void Create(Author author)
         {
