@@ -16,27 +16,42 @@ namespace SQLDataAccess.Repository.Dapper
 
         public void Create(Advert advert)
         {
-            PostgreConnection.Connection().Execute(CreateQuery, advert);
+            using (var connection = PostgreConnection.Connection())
+            {
+                connection.Execute(CreateQuery, advert);
+            }
         }
 
         public void Delete(int id)
         {
-            PostgreConnection.Connection().Execute(DeleteQuery, id);
+            using (var connection = PostgreConnection.Connection())
+            {
+                PostgreConnection.Connection().Execute(DeleteQuery, id);
+            }
         }
 
         public Advert Get(int id)
         {
-            return PostgreConnection.Connection().Query<Advert>(GetQuery).FirstOrDefault();
+            using (var connection = PostgreConnection.Connection())
+            {
+                return connection.Query<Advert>(GetQuery, id).FirstOrDefault();
+            }
         }
 
         public List<Advert> GetAll()
         {
-            return PostgreConnection.Connection().Query<Advert>(GetAllQuery).ToList();
+            using (var connection = PostgreConnection.Connection())
+            {
+                return connection.Query<Advert>(GetAllQuery).ToList();
+            }
         }
 
         public void Update(Advert advert)
         {
-            PostgreConnection.Connection().Execute(UpdateQuery, advert);
+            using (var connection = PostgreConnection.Connection())
+            {
+                connection.Execute(UpdateQuery, advert);
+            }
         }
     }
 }
