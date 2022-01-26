@@ -15,7 +15,7 @@ namespace SQLDataAccess
         public string Value()
         {
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory/*Directory.GetCurrentDirectory()*/)
+                .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();
             return configuration.GetConnectionString(ApplicationName);
