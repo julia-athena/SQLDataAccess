@@ -11,8 +11,9 @@ namespace SQLDataAccess
         {
             GetCategories();
             GetAuthors();
-            GetAdverts();      
+            GetAdverts();        
         }
+
 
         static void GetCategories()
         {
@@ -28,7 +29,7 @@ namespace SQLDataAccess
         }
         static void GetAuthors()
         {
-            Console.WriteLine("Авторы объявлений");
+            Console.WriteLine("Авторы");
             var repo = new DapperAuthorRepository();
             var res = repo.GetAll();
             foreach (var item in res)
@@ -40,7 +41,7 @@ namespace SQLDataAccess
 
         static void GetAdverts()
         {
-            Console.WriteLine("ОбЪявления");
+            Console.WriteLine("Объявления");
             var repo = new DapperAdvertRepository();
             var res = repo.GetAll();
             foreach (var item in res)

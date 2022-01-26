@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace SQLDataAccess.Repository
 {
-    public interface IAdvertRepository
+    public interface IAdvertRepository: IGenericRepository<Advert, int> 
     {
-        void Create(Advert advert);
-        void Update(Advert advert);
-        void Delete(int id);
-        Advert Get(int id);
-        List<Advert> GetAll();
+       List<Advert> GetByParams(int? authorId, int? categoryId, string substringInTitle);
     }
 }

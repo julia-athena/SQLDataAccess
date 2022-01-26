@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLDataAccess.Repository
 {
-    public interface IAuthorRepository
+    public interface IAuthorRepository: IGenericRepository<Author, int>
     {
-        void Create(Author author);
-        void Update(Author author);
-        void Delete(int id);
-        Author Get(int id);
-        List<Author> GetAll();
     }
 }
